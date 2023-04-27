@@ -3,7 +3,7 @@
 Consigne: en utilisant un modèle déjà estimé de taille moyenne (e.g. Smets et Wouters), simulez plusieurs jeux de données de taille réaliste. Sur ces données simulées, re-estimez le modèle en modifiant ou non la valeur de certains paramètres initialement calibrés. Vous montrerez ainsi l’impact d’une erreur de calibration sur l’estimation des autres paramètres. Vous discuterez le choix des paramètres que vous modifiez et analyserez les paramètres impactés au regard des mécanismes économiques les reliant au sein du modèle.
 
 
-## Premières pistes
+## Projet
 
 On choisit de se concentrer sur les paramètres en lien avec la fonction de production. 
 
@@ -22,9 +22,17 @@ Les paramètres calibrés liés à la fonction de productions sont donc :
 
 Ce sont donc ces paramètres dont il faut essayer de changer la valeur (i.e. de fixer une certaine valeur au lieu de les calibrer ?), et voir l'effet que cela a sur les autres paramètres estimés. 
 
-Je crois que les lignes de code régissant l'estimation des ces trois paramètres sont respectivement les lignes 464, 474 et 446. 
 
-De ce que je comprends:
-- il faut commencer par "simuler plusieurs jeux de données", c'est-à-dire lancer plusieurs fois le code en modifant certains paramètres peut-être ? peut-être certains chocs ? ça je ne comprends pas trop. 
-- pour chaque jeu de données, on peut comparer le "prior" (i.e. la distribution des paramètres avant calibration) avec le "posterior" (i.e. la distribution des paramètres après calibration) pour chaque paramètre, sur les graphiques 18 à 20 en particulier
-- puis pour chaque "jeu de données" (i.e. pour chaque modalité du code ?), il faut passer un paramètre calibré en paramètre variable fixé, relancer le code et voir l'effet sur les autres paramètres - c'est-à-dire comparer le posterior ainsi obtenu avec le posterior de référence ? 
+## Plan
+
+
+### 1. Simuler des jeux de données
+
+On part du modèle SW de base, estimé sur US data. On réalise trois stoch_simul(periods = 200), pour trois chocs différents: ea, eb, ew. On sauvegarde les données issues des ces trois simulations en trois jeux de données différents. 
+
+
+### 2. Faire tourner des contrefactuels 
+
+Pour chacun des jeux de données simulés : 
+On fait tourner des modèles SW alternatifs sur ces données ( code : estimation(datafile = XXX=) ), en changeant les valeurs d'un des trois paramètres considérés (+/- 50% => 5 scénarios). Pour la variable fixée, on change juste sa valeur de départ et on comment out la calibration ; pour les variables calibrées, on fixe en prior le posterior obtenu avec le modèle SW de base (moyenne et std). On compare ensuite les paramètres calibrés et les valeurs des variables endogènes à l'état stationnaire, à ce qu'on avait obtenu pour le modèle SW de base. 
+
