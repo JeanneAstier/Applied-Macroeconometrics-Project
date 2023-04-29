@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct>
+    <crhoa>0.98073</crhoa>
+    <crhob>0.21559</crhob>
+    <crhog>0.96661</crhog>
+    <crhoqs>0.63125</crhoqs>
+    <crhoms>0.20532</crhoms>
+    <crhopinf>0.97898</crhopinf>
+    <crhow>0.97787</crhow>
+    <cmap>0.8288</cmap>
+    <cmaw>0.92347</cmaw>
+    <csadjcost>6.3649</csadjcost>
+    <csigma>1.255</csigma>
+    <chabb>0.78784</chabb>
+    <cprobw>0.76493</cprobw>
+    <csigl>2.5218</csigl>
+    <cprobp>0.55554</cprobp>
+    <cindw>0.52169</cindw>
+    <cindp>0.20526</cindp>
+    <czcap>0.37881</czcap>
+    <cfc>1.6601</cfc>
+    <crpi>1.8984</crpi>
+    <crr>0.87586</crr>
+    <cry>0.12632</cry>
+    <crdy>0.13648</crdy>
+    <constepinf>0.65585</constepinf>
+    <constebeta>0.13645</constebeta>
+    <constelab>1.1582</constelab>
+    <ctrend>0.50603</ctrend>
+    <cgy>0.59712</cgy>
+    <calfa>0.20182</calfa>
+</struct>
