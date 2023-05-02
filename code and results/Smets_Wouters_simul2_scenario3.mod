@@ -364,5 +364,5 @@ varobs dy dc dinve labobs pinfobs dw robs;
 
 
 //Full MC simulation 
-estimation(optim=('MaxIter',200),datafile=SW_simul2,mode_file=usmodel_shock_decomp_mode,mode_compute=0,first_obs=1,presample=4,lik_init=2,prefilter=0,mh_replic=20000,mh_nblocks=2,mh_jscale=0.20,mh_drop=0.2,posterior_graph,bayesian_irf,irf=150,irf_shocks=(eb), nograph);
+estimation(optim=('MaxIter',200),datafile=SW_simul2,mode_file=usmodel_shock_decomp_mode,mode_compute=0,first_obs=1,presample=4,lik_init=2,prefilter=0,mh_replic=20000,mh_nblocks=2,mh_jscale=0.20,mh_drop=0.2,posterior_graph,bayesian_irf,irf=150,irf_shocks=(eb));
 
